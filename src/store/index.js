@@ -19,6 +19,9 @@ export default new Vuex.Store({
     userAuth(state) {
       return state.userAuth;
     },
+    todoListLength(state) {
+      return state.todoList.length;
+    },
     todoList(state) {
       const stringToBoolean = (string) => string !== "false";
       return state.todoList

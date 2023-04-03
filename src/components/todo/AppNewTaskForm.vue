@@ -1,6 +1,6 @@
 <template>
   <form class="new_task_form" ref="addTaskForm" @submit.prevent="addTask">
-    <input type="hidden" name="id" :value="todoList.length + 1" />
+    <input type="hidden" name="id" :value="todoListLength + 1" />
     <label class="form_label">
       <span class="form_label_name">ID користувача</span>
       <input
@@ -47,7 +47,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["todoList"]),
+    ...mapGetters(["todoListLength"]),
   },
   validations: {
     userId: {
