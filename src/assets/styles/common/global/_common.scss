@@ -1,0 +1,55 @@
+.hidden{
+  display: none;
+}
+.prevent{
+  pointer-events: none;
+}
+
+//Scroll
+/* width */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+//Buttons
+.btn_submit{
+  display: block;
+  width: max-content;
+  min-width: 100px;
+  padding: 10px;
+  background: #519945;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: -0.025em;
+  color: var(--color-white);
+  transition: background-color 0.5s, opacity 0.5s;
+  &:hover{}
+  &:active{}
+  &:disabled{
+    filter: grayscale(1);
+  }
+}
+.btn_logout{
+  display: block;
+  width: max-content;
+  min-width: 100px;
+  padding: 10px;
+  background: #ff0000;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: -0.025em;
+  color: var(--color-white);
+  transition: background-color 0.5s, opacity 0.5s;
+  &:hover{}
+  &:active{}
+  &:disabled{
+    filter: grayscale(1);
+  }
+}
+b, strong, .bold{
+  font-weight: 700;
+}

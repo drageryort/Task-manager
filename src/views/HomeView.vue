@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="page_layout">
+    <AppUserForm />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import AppUserForm from "@/components/home/AppUserForm";
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
+  components: { AppUserForm },
 };
 </script>
+<style lang="scss" scoped>
+.page_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+</style>
