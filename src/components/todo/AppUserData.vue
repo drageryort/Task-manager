@@ -12,8 +12,9 @@
       <li class="user_data_el">
         <span>Адреса:</span>
         <span class="bold">
-          {{ userData.address.zipcode }},{{ userData.address.city }}
-          {{ userData.address.street }},{{ userData.address.suite }}
+          {{ userData.address.zipcode }}, {{ userData.address.city }} вул.{{
+            userData.address.street
+          }}, {{ userData.address.suite }}
         </span>
       </li>
       <li class="user_data_el">
@@ -32,7 +33,7 @@
             <span class="bold">{{ userData.company.name }}</span>
           </li>
           <li class="user_data_el">
-            <span>посада:</span>
+            <span>сфера діяльності:</span>
             <span class="bold">{{ userData.company.bs }}</span>
           </li>
         </ul>

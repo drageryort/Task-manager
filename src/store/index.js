@@ -72,7 +72,7 @@ export default new Vuex.Store({
           await fetch("https://jsonplaceholder.typicode.com/users")
         ).json();
         const userData = usersList.find(
-          (el) => el.username === userName && el.phone === userPhone
+          (el) => el.name === userName && el.phone === userPhone
         );
         if (userData) {
           userData.isAuth = true;
@@ -101,6 +101,7 @@ export default new Vuex.Store({
           {
             headers: { "Content-Type": "application/json" },
             method: "POST",
+            body: JSON.stringify(taskData),
           }
         );
         if (addTodo.status === 201 && addTodo.ok === true) {

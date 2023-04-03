@@ -4,7 +4,7 @@
       <span class="field_title">Пошук за назвою</span>
       <input class="input field_input" type="text" name="title" />
     </label>
-    <span class="form_filter_title">Фільтра</span>
+    <span class="form_filter_title">Фільтр</span>
     <div
       class="form_filter_section"
       v-for="filterListBlock of filterList"

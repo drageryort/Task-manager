@@ -124,11 +124,6 @@ a, span {
   pointer-events: none;
 }
 
-/* width */
-*::-webkit-scrollbar {
-  display: none;
-}
-
 .btn_submit {
   display: block;
   width: max-content;
