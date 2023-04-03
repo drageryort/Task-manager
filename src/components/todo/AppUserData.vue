@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 import { localStorageToObject } from "@/services/services";
 import AppLogout from "@/components/AppLogout";
 
