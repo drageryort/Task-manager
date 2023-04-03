@@ -1,6 +1,6 @@
 const localStorageToObject = (key) => JSON.parse(localStorage.getItem(key));
 
-const formDataToObject = formData => {
+const formDataToObject = (formData) => {
   let object = {};
   formData.forEach((value, key) => {
     // Reflect.has in favor of: object.hasOwnProperty(key)
@@ -16,5 +16,4 @@ const formDataToObject = formData => {
   return object;
 };
 
-
-export {localStorageToObject, formDataToObject}
+export { localStorageToObject, formDataToObject };

@@ -51,15 +51,15 @@ export default {
 .filter_form {
   padding: 30px 10px;
   width: 250px;
-  .search_field{
+  .search_field {
     display: block;
     margin: 0 0 20px;
-    .field_title{
+    .field_title {
       margin: 0 0 5px;
       font-size: 24px;
       font-weight: 600;
     }
-    .field_input{
+    .field_input {
       width: 100%;
       font-size: 18px;
     }
@@ -71,7 +71,7 @@ export default {
   }
   .form_filter_section {
     margin: 0 0 10px;
-    &:nth-of-type{
+    &:nth-of-type {
       margin: 0;
     }
     .select {
@@ -80,12 +80,12 @@ export default {
       font-size: 18px;
       outline: none;
       cursor: pointer;
-      &:focus{
+      &:focus {
         outline: none;
       }
       .select_option {
         outline: none;
-        &:focus{
+        &:focus {
           outline: none;
         }
       }

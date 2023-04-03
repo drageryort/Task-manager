@@ -5,7 +5,7 @@
 <script>
 export default {
   name: "AppLogout",
-  methods:{
+  methods: {
     logout() {
       localStorage.removeItem("userData");
       this.$router.go();

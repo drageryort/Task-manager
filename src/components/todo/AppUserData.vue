@@ -7,13 +7,13 @@
       </li>
       <li class="user_data_el">
         <span>Ел. пошта:</span>
-        <span class="bold">{{ userData.email }}</span></li>
+        <span class="bold">{{ userData.email }}</span>
+      </li>
       <li class="user_data_el">
         <span>Адреса:</span>
-        <span
-          class="bold">
-          {{ userData.address.zipcode }},{{ userData.address.city }} {{ userData.address.street
-          }},{{ userData.address.suite }}
+        <span class="bold">
+          {{ userData.address.zipcode }},{{ userData.address.city }}
+          {{ userData.address.street }},{{ userData.address.suite }}
         </span>
       </li>
       <li class="user_data_el">
@@ -38,7 +38,7 @@
         </ul>
       </li>
     </ul>
-    <AppLogout/>
+    <AppLogout />
   </div>
 </template>
 
@@ -52,28 +52,29 @@ export default {
   computed: {
     userData() {
       return localStorageToObject("userData");
-    }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.user_data{
+.user_data {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 15px;
   background: var(--color-white);
   border-radius: 15px;
-.user_data_list {
-.user_data_el {
-  display: flex;
-  column-gap: 5px;
-  font-size: 18px;
-}
-.user_data_sub_list {
-}
-}
-.user_logout{}
+  .user_data_list {
+    .user_data_el {
+      display: flex;
+      column-gap: 5px;
+      font-size: 18px;
+    }
+    .user_data_sub_list {
+    }
+  }
+  .user_logout {
+  }
 }
 </style>

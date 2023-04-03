@@ -1,6 +1,6 @@
 <template>
   <form class="new_task_form" ref="addTaskForm" @submit.prevent="addTask">
-    <input type="hidden" name="id" :value="todoList.length + 1">
+    <input type="hidden" name="id" :value="todoList.length + 1" />
     <label class="form_label">
       <span class="form_label_name">ID користувача</span>
       <input
@@ -8,17 +8,15 @@
         v-model.trim="$v.userId.$model"
         type="text"
         name="userId"
-        placeholder="">
-      <span
-        class="form_error"
-        v-if="$v.userId.$invalid && $v.userId.$dirty"
-      >
+        placeholder=""
+      />
+      <span class="form_error" v-if="$v.userId.$invalid && $v.userId.$dirty">
         Помилка! Може включати лише цифри
       </span>
     </label>
     <label class="form_label checkbox">
       <span class="form_label_name">Статус виконання</span>
-      <input type="checkbox" name="completed" value="true">
+      <input type="checkbox" name="completed" value="true" />
     </label>
     <button class="btn btn_submit" :disabled="$v.$invalid">Додати</button>
     <label class="form_label textarea">
@@ -26,11 +24,9 @@
       <textarea
         v-model.trim="$v.title.$model"
         class="form_label_textarea input"
-        name="title"></textarea>
-      <span
-        class="form_error"
-        v-if="$v.title.$invalid && $v.title.$dirty"
-      >
+        name="title"
+      ></textarea>
+      <span class="form_error" v-if="$v.title.$invalid && $v.title.$dirty">
         Помилка! Не може бути порожнім
       </span>
     </label>
@@ -47,20 +43,20 @@ export default {
   data() {
     return {
       userId: "",
-      title: ""
+      title: "",
     };
   },
   computed: {
-    ...mapGetters(["todoList"])
+    ...mapGetters(["todoList"]),
   },
   validations: {
     userId: {
       required,
-      numeric
+      numeric,
     },
     title: {
-      required
-    }
+      required,
+    },
   },
   methods: {
     addTask() {
@@ -68,8 +64,8 @@ export default {
       const formDataObject = formDataToObject(formData);
       formDataObject.completed = formDataObject.completed ? true : false;
       this.$store.dispatch("addNewTaskAction", formDataObject);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -91,12 +87,15 @@ export default {
     &.checkbox {
       flex-direction: row;
     }
-    .form_label_name {}
-    .form_label_input {}
-    &.textarea, .form_label_textarea {
+    .form_label_name {
+    }
+    .form_label_input {
+    }
+    &.textarea,
+    .form_label_textarea {
       width: 100%;
     }
-    .form_error{
+    .form_error {
       font-weight: 400;
       font-size: 10px;
       line-height: 14px;

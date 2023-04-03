@@ -1,13 +1,12 @@
 <template>
   <div class="content">
-    <AppUserData/>
-    <AppNewTaskForm/>
-    <AppTodoList/>
+    <AppUserData />
+    <AppNewTaskForm />
+    <AppTodoList />
   </div>
 </template>
 
 <script>
-
 import AppNewTaskForm from "@/components/todo/AppNewTaskForm";
 import AppUserData from "@/components/todo/AppUserData";
 import AppTodoList from "@/components/todo/AppTodoList";

@@ -1,11 +1,13 @@
 <template>
-  <div class="form_wrapper" >
+  <div class="form_wrapper">
     <h1 class="form_title">description</h1>
     <div v-if="isAuth" class="form">
-      <h2>Ви зареєстровані як {{userData.name}}</h2>
+      <h2>Ви зареєстровані як {{ userData.name }}</h2>
       <div class="button_list">
-        <router-link to="/todos" class="btn btn_submit">Перейти до задач</router-link>
-        <AppLogout/>
+        <router-link to="/todos" class="btn btn_submit"
+          >Перейти до задач</router-link
+        >
+        <AppLogout />
       </div>
     </div>
     <form v-else class="form" @submit.prevent="login">
@@ -48,7 +50,7 @@
 
 <script>
 import { required, helpers } from "vuelidate/lib/validators";
-import {localStorageToObject} from "@/services/services"
+import { localStorageToObject } from "@/services/services";
 import AppLogout from "@/components/AppLogout";
 
 const alpha = helpers.regex("alpha", /^[а-яА-іІїЇЯёЁa-zA-Z\s]+$/);
@@ -65,13 +67,12 @@ export default {
   },
   computed: {
     userData() {
-      return localStorageToObject('userData');
+      return localStorageToObject("userData");
     },
     isAuth() {
-      const userData = localStorageToObject('userData');
+      const userData = localStorageToObject("userData");
       return !!(userData && userData.isAuth);
-
-    }
+    },
   },
   validations: {
     userName: {
@@ -118,9 +119,10 @@ export default {
     flex-direction: column;
     padding: 15px 25px 30px;
     background: var(--color-form-gray);
-    .button_list{
+    .button_list {
       display: flex;
-      align-items: center;justify-content: space-between;
+      align-items: center;
+      justify-content: space-between;
       margin: 20px 0 0;
     }
     .form_sub_title {

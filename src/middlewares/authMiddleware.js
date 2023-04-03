@@ -1,7 +1,7 @@
-import {localStorageToObject} from "@/services/services"
+import { localStorageToObject } from "@/services/services";
 
 const authGuard = (to, from, next) => {
-  const user = localStorageToObject('userData');
+  const user = localStorageToObject("userData");
   if (user && user.isAuth) {
     next();
   } else {
