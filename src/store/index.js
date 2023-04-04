@@ -10,6 +10,7 @@ export default new Vuex.Store({
       userId: "",
       completed: "",
       title: "",
+      // favorite: false,
     },
   },
   getters: {
@@ -28,6 +29,9 @@ export default new Vuex.Store({
         .filter(
           (el) =>
             el.title.includes(state.filterParams.title) &&
+            (state.filterParams.favorite
+              ? el.favorite === stringToBoolean(state.filterParams.favorite)
+              : true) &&
             (state.filterParams.userId.length
               ? Number(el.userId) === Number(state.filterParams.userId)
               : true) &&
@@ -63,6 +67,23 @@ export default new Vuex.Store({
     },
     addNewTask(state, taskData) {
       state.todoList.push(taskData);
+    },
+    updateFavorite(state, taskId) {
+      const todo = state.todoList.find((el) => el.id === taskId);
+      const value = !todo.favorite || todo.favorite === false;
+      if (value) {
+        Vue.set(
+          state.todoList.find((el) => el.id === taskId),
+          "favorite",
+          value
+        );
+      } else {
+        Vue.delete(
+          state.todoList.find((el) => el.id === taskId),
+          "favorite",
+          value
+        );
+      }
     },
   },
   actions: {

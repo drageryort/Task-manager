@@ -10,6 +10,7 @@
       v-for="filterListBlock of filterList"
       :key="filterListBlock.id"
     >
+      <span class="select_name">{{ filterListBlock.name }}</span>
       <select class="select" :name="filterListBlock.id">
         <option class="select_option" value="" selected>Усі</option>
         <option
@@ -21,6 +22,10 @@
         </option>
       </select>
     </div>
+    <label class="form_filter_checkbox">
+      <input class="checkbox" type="checkbox" value="true" name="favorite" />
+      <span class="checkbox_name">В обраних</span>
+    </label>
   </form>
 </template>
 
@@ -69,10 +74,29 @@ export default {
     font-size: 24px;
     font-weight: 600;
   }
+  .form_filter_checkbox {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    &:nth-child {
+      margin: 0;
+    }
+    .checkbox {
+      width: 20px;
+      height: 20px;
+    }
+    .checkbox_name {
+      font-size: 18px;
+    }
+  }
   .form_filter_section {
     margin: 0 0 10px;
-    &:nth-of-type {
+    &:nth-child {
       margin: 0;
+    }
+    .form_filter_section_name {
+      margin: 0 0 10px;
+      font-size: 18px;
     }
     .select {
       width: 100%;

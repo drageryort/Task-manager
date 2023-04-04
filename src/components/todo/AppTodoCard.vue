@@ -1,19 +1,17 @@
 <template>
   <li class="list_card_el" :class="{ completed: list_el.completed }">
-    <span class="status"></span>
     <span class="bold"># {{ list_el.id }}</span>
     <span><span class="bold">ID користувача:</span> {{ list_el.userId }},</span>
     <span><span class="bold">Задача:</span> {{ list_el.title }}</span>
     <button class="add_to_favorite btn" @click="addToFavorite(list_el)">
       <svg
+        :class="{ favorite: list_el.favorite }"
         xmlns="http://www.w3.org/2000/svg"
         xml:space="preserve"
-        width="25"
-        height="25"
-        viewBox="0 0 471.701 471.701"
+        viewBox="0 0 512 512"
       >
         <path
-          d="M433.601 67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7 13.6-92.4 38.3l-12.9 12.9-13.1-13.1c-24.7-24.7-57.6-38.4-92.5-38.4-34.8 0-67.6 13.6-92.2 38.2-24.7 24.7-38.3 57.5-38.2 92.4 0 34.9 13.7 67.6 38.4 92.3l187.8 187.8c2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-3.9l188.2-187.5c24.7-24.7 38.3-57.5 38.3-92.4.1-34.9-13.4-67.7-38.1-92.4zm-19.2 165.7-178.7 178-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3s10.7-53.7 30.3-73.2c19.5-19.5 45.5-30.3 73.1-30.3 27.7 0 53.8 10.8 73.4 30.4l22.6 22.6c5.3 5.3 13.8 5.3 19.1 0l22.4-22.4c19.6-19.6 45.7-30.4 73.3-30.4 27.6 0 53.6 10.8 73.2 30.3 19.6 19.6 30.3 45.6 30.3 73.3.1 27.7-10.7 53.7-30.3 73.3z"
+          d="M476.6 63.8C454.5 37 423 23.6 382.8 21.3c-41.7 0-72.5 18.1-93.7 42.5-22.1 24.4-33.1 39.4-33.9 42.5-.8-3.2-11.8-18.1-33.9-42.5s-49.6-42.5-93.7-42.5c-40.2 2.4-72.5 16.5-93.7 42.5C11.8 89.8.8 118.2 0 148.9c0 22.1 3.9 64.6 28.4 114.2 24.4 48.8 100 125.2 227.6 227.6 126.8-101.6 203.2-178 227.6-227.6C508 213.5 512 170.2 512 148.9c-.8-30.7-11.8-59.1-33.9-85.9v.8h-1.5z"
         />
       </svg>
     </button>
@@ -30,6 +28,7 @@ export default {
     addToFavorite(list_el) {
       window.localStorage.setItem("favorite", JSON.stringify(list_el));
       window.confirm(`Задача ${list_el.title} додана до обраного`);
+      this.$store.commit("updateFavorite", list_el.id);
     },
   },
 };
@@ -49,11 +48,21 @@ export default {
     background: rgba(47, 220, 19, 0.3);
   }
   .add_to_favorite {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
+    svg{
+      path {
+        fill: var(--color-common-gray);
+      }
+      &.favorite {
+        path {
+          fill: var(--color-red);
+        }
+      }
+    }
   }
 }
 </style>
