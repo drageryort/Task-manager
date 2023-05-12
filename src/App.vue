@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  height: calc(100vh - 60px - 270px);
+  height: calc(100vh - 60px - 70px);
   background: var(--color-layout-gray);
   overflow-y: auto;
 }

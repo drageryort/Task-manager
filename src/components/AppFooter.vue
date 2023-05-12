@@ -11,7 +11,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   width: 100%;
-  height: 270px;
+  height: 70px;
   background: var(--color-common-gray);
 }
 </style>
